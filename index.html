@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Install and Activate Office 2024</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>
+      Steps to Install and Activate Microsoft Office 2024 Professional Plus
+    </h1>
+
+    <div class="section">
+      <h2>1. Download and Install the Office Deployment Tool</h2>
+      <ol>
+        <li>
+          Download link:
+          <a
+            href="https://www.microsoft.com/en-in/download/details.aspx?id=49117"
+            target="_blank"
+            >https://www.microsoft.com/en-in/download/details.aspx?id=49117</a
+          >
+          <img
+            src="images/step1-1.png"
+            alt="download-page"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Right-click on officedeploymenttool and choose “Run as administrator”.
+          Click Continue, and specify the extraction path — for example, extract
+          it to the Downloads directory.
+          <img
+            src="images/step1-2-1.png"
+            alt="Run as Admin"
+            class="step-image"
+          />
+          <img
+            src="images/step1-2-2.png"
+            alt="Run as Admin"
+            class="step-image"
+          />
+          <img
+            src="images/step1-2-3.png"
+            alt="Run as Admin"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Then, in the specified path, you will see two extracted files:
+          configuration-Office365-x64.xml and setup.exe.
+          <img
+            src="images/step1-4.png"
+            alt="Accept License"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Rename configuration-Office365-x64.xml to configuration.xml.
+          <img
+            src="images/step1-5-1.png"
+            alt="Accept License"
+            class="step-image"
+          />
+          <img
+            src="images/step1-5-2.png"
+            alt="Accept License"
+            class="step-image"
+          />
+        </li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>2. Start Office Deployment</h2>
+      <ol>
+        <li>
+          Right-click on configuration.xml and open it with Notepad.
+          <img
+            src="images/step2-1.png"
+            alt="Select Architecture"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Since this file contains Microsoft’s default configuration code for
+          downloading Office 365 — which is not the version we need — we will
+          replace it with the correct configuration for Office Pro Plus 2024
+          Volume. Please replace the content of the file with the following code
+          then save and close it.
+          <img
+            src="images/step2-1-2.png"
+            alt="Select Architecture"
+            class="step-image"
+          />
+          <p>The code to replace with:</p>
+          <pre>
+&lt;Configuration&gt;
+  &lt;Add OfficeClientEdition="64" Channel="PerpetualVL2024"&gt;
+    &lt;Product ID="ProPlus2024Volume"&gt;
+      &lt;Language ID="en-us" /&gt;
+    &lt;/Product&gt;
+  &lt;/Add&gt;
+  &lt;Display Level="Full" AcceptEULA="TRUE" /&gt;
+&lt;/Configuration&gt;
+</pre
+          >
+        </li>
+        <li>
+          Right-click in the folder where the setup.exe file is located and
+          select “Open in Terminal.”
+          <img
+            src="images/step2-3.png"
+            alt="Select Architecture"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Copy the file path — make sure not to include the trailing “>”. Paste
+          it somewhere to save.
+          <img
+            src="images/step2-2.png"
+            alt="Select Architecture"
+            class="step-image"
+          />
+        </li>
+        <li>
+          In the Windows search bar, type “cmd”, then in the list of results,
+          right-click on “Command Prompt” and select “Run as administrator”.
+          <img
+            src="images/step2-4.png"
+            alt="Update Channel"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Type cd /d C:\Users\leo_n\Downloads and press Enter. Here,
+          C:\Users\leo_n\Downloads is the file path you saved earlier.You need
+          to replace it with the file path on your own computer.
+          <img
+            src="images/step2-6.png"
+            alt="Enable Shortcut"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Type setup.exe /configure configuration.xml and press Enter.
+          <img
+            src="images/step2-7.png"
+            alt="Select Product"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Microsoft Office will start the download process, which may take ten
+          minutes or longer depending on your internet speed.
+           <img src="images/step2-8.png" alt="Start Deploy" class="step-image" />
+           <img src="images/step2-9.png" alt="Start Deploy" class="step-image" />
+        </li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>4. Activation</h2>
+      <ol>
+        <li>
+          Open any Office app (Word, Excel, etc.).
+          <img
+            src="images/step4-1.png"
+            alt="Open Office App"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Accept the license agreement.
+          <img
+            src="images/step4-2.png"
+            alt="Accept License"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Go to <strong>Account</strong> → <strong>Change Product Key</strong>.
+          <img src="images/step4-3.png" alt="Change Key" class="step-image" />
+        </li>
+        <li>
+          Enter your product key and click “Activate Office”.
+          <img src="images/step4-4.png" alt="Enter Key" class="step-image" />
+        </li>
+        <li>
+          Close the app and reopen it. When prompted, Choose
+          <strong>Phone Activation</strong>.
+          <img
+            src="images/step4-5.png"
+            alt="Phone Activation"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Send us the Installation ID (Step 2 on screen). A screenshot is
+          preferred for accuracy.
+          <img
+            src="images/step4-6.png"
+            alt="Installation ID"
+            class="step-image"
+          />
+        </li>
+        <li>
+          Enter the Confirmation ID we provide to complete the activation of
+          your product.
+          <img
+            src="images/step4-7.png"
+            alt="Confirmation ID"
+            class="step-image"
+          />
+        </li>
+      </ol>
+
+      <p>
+        <strong>
+          If you do not receive the Confirmation ID right away, please don’t
+          worry. Restarting your computer or the Office program will not affect
+          its validity — the Confirmation ID will still work.</strong
+        >
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>ℹ️ Additional Notes</h2>
+      <ul>
+        <li>Double-check the Installation ID if activation fails.</li>
+        <li>
+          Your Installation ID is unique and linked to your Confirmation ID.
+        </li>
+        <li>Confirmation ID works even after a restart.</li>
+        <li>All Office apps activate together.</li>
+        <li>Contact us anytime for help.</li>
+      </ul>
+    </div>
+  </body>
+</html>
