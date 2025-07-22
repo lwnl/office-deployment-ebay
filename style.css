@@ -26,6 +26,10 @@ a {
   text-decoration: underline;
 }
 
+strong {
+  color: #90caf9;
+}
+
 .section {
   max-width: 800px;
   width: 100%;
